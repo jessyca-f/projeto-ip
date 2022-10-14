@@ -34,4 +34,7 @@ class Jogador():
 
         self.jogador_rect.x += self.direcao.x * self.velocidade
         self.jogador_rect.y += self.direcao.y
-        tela.blit(self.jogador_sprite, self.jogador_rect)
+
+    def desenhar_jogador(self,  jogador_pos):
+        tela = pygame.display.get_surface()
+        tela.blit(self.jogador_sprite, jogador_pos)
