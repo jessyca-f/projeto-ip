@@ -62,3 +62,11 @@ class Nivel():
         for posicao in self.posicoes_validas:
             plataforma_pos = self.cam_rolagem(posicao[1])
             tela.blit(posicao[0], plataforma_pos[1])
+
+    def colisoes_horizontais(self):
+        for sprite in self.posicoes_validas:
+            if sprite.rect.colliderect(self.jogador):
+                if self.direction.x < 0:
+                    self.rect.left = sprite.rect.rigth
+                if self.direction.x > 0:
+                    self.rect.rigth = sprite.rect.left

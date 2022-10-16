@@ -49,6 +49,7 @@ while executando:
         jogador.entrada_movimento()
         jogador_pos = camera[0]
         jogador.desenhar_jogador(jogador_pos)
+        nivel.colisoes_horizontais()
 
 
     pygame.display.update()
