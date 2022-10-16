@@ -4,10 +4,10 @@ import pygame
 TAMANHO_TILE = (30, 30)
 
 class Nivel():
-    def __init__(self, jogador_rect, rolagem):
-
-        self.jogador_rect = jogador_rect
+    def __init__(self, jogador, rolagem):
+        self.jogador_rect = jogador.jogador_rect
         self.rolagem = rolagem
+        self.direcao = jogador.direcao
 
         # matriz de coordenadas onde 1 representa uma plataforma comum
         layout_nivel = [
@@ -62,3 +62,12 @@ class Nivel():
         for posicao in self.posicoes_validas:
             plataforma_pos = self.cam_rolagem(posicao[1])
             tela.blit(posicao[0], plataforma_pos[1])
+
+    def colisoes_horizontais(self):
+        for sprite in self.posicoes_validas:
+            plataforma = sprite[1]
+            if plataforma.colliderect(self.jogador_rect):
+                if self.direcao.x < 0:
+                    self.jogador_rect.left = plataforma.right
+                if self.direcao.x > 0:
+                    self.jogador_rect.right = plataforma.left
