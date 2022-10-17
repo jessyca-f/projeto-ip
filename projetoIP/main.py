@@ -18,7 +18,7 @@ jogador = Jogador()
 
 rolagem = [0, 0]
 
-nivel = Nivel(jogador.jogador_rect, rolagem)
+nivel = Nivel(jogador, rolagem)
 
 
 
@@ -50,6 +50,7 @@ while executando:
         jogador_pos = camera[0]
         jogador.desenhar_jogador(jogador_pos)
         nivel.colisoes_horizontais()
+        nivel.colisoes_verticais()
 
 
     pygame.display.update()
