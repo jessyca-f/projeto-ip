@@ -14,8 +14,6 @@ pygame.display.set_caption('Projeto IP')
 
 clock = pygame.time.Clock() # responsável pela quantidade de frames por segundo
 
-
-
 rolagem = [0, 0]
 
 nivel = Nivel(rolagem)
@@ -44,15 +42,11 @@ while executando:
     if not pause:
         tela.fill(TELA_FUNDO) # inicia a tela
         nivel.plataformas_nivel() # desenha as plataformas
+        nivel.objetos_nivel()
         rolagem[0] += (jogador.jogador_rect.x - rolagem[0] - 600) / 5
         rolagem[1] += (jogador.jogador_rect.y - rolagem[1] - 100) / 5
         jogador.desenhar_jogador()
         jogador.atualizar_jogador()
-
-
-
-
-
 
     pygame.display.update()
     clock.tick(60)

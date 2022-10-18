@@ -7,9 +7,12 @@ class Jogador():
         self.jogador_rect = self.jogador_sprite.get_rect()
         self.direcao = pygame.math.Vector2()
         self.velocidade = 10
-        self.gravidade = 0.6
+        self.gravidade = 0.7
         self.rolagem = rolagem
         self.posicoes_validas = nivel.posicoes_validas
+        self.coletaveis_azuis = nivel.coletaveis_azuis
+        self.coletaveis_verdes = nivel.coletaveis_verdes
+        self.coletaveis_rosas = nivel.coletaveis_rosas
         self.no_ar = True
 
 
@@ -63,6 +66,43 @@ class Jogador():
                 if self.direcao.y < 0:
                     self.jogador_rect.top = plataforma.bottom
                     self.direcao.y = 0
+    
+    def colisoes_coletaveis(self):
+        coletavel_azul = pygame.image.load('assets/coletaveis/azul.png')
+        coletavel_verde = pygame.image.load('assets/coletaveis/verde.png')
+        coletavel_rosa = pygame.image.load('assets/coletaveis/rosa.png')
+
+        novo_coletavel_azul = pygame.transform.scale(coletavel_azul, (80, 80))
+        novo_coletavel_verde = pygame.transform.scale(coletavel_verde, (80, 80))
+        novo_coletavel_rosa =  pygame.transform.scale(coletavel_rosa, (80, 80))
+
+        tela = pygame.display.get_surface()
+
+        if self.coletaveis_azuis == []:
+            tela.blit(novo_coletavel_azul, (1120,0))
+        
+        if self.coletaveis_verdes == []:
+            tela.blit(novo_coletavel_verde, (1040,0))
+        
+        if self.coletaveis_rosas == []:
+            tela.blit(novo_coletavel_rosa, (960,0))
+
+        for sprite in self.coletaveis_azuis:
+            objeto = sprite[1]
+            if objeto.colliderect(self.jogador_rect):
+                self.coletaveis_azuis = []
+
+        
+        for sprite in self.coletaveis_verdes:
+            objeto = sprite[1]
+            if objeto.colliderect(self.jogador_rect):
+                self.coletaveis_verdes = []
+
+        
+        for sprite in self.coletaveis_rosas:
+            objeto = sprite[1]
+            if objeto.colliderect(self.jogador_rect):
+                self.coletaveis_rosas = []
 
     def desenhar_jogador(self):
         tela = pygame.display.get_surface()
@@ -76,3 +116,4 @@ class Jogador():
         self.colisoes_horizontais()
         self.add_gravidade()
         self.colisoes_verticais()
+        self.colisoes_coletaveis()
