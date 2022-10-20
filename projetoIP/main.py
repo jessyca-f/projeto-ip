@@ -1,5 +1,6 @@
 import pygame
 from interface.nivel.layout import Nivel
+from interface.nivel.layout import Coletavel
 from personagem.jogador import Jogador
 
 # constantes
@@ -17,7 +18,8 @@ clock = pygame.time.Clock() # responsável pela quantidade de frames por segundo
 rolagem = [0, 0]
 
 nivel = Nivel(rolagem)
-jogador = Jogador(nivel, rolagem)
+coletaveis = Coletavel(nivel)
+jogador = Jogador(nivel, coletaveis, rolagem)
 cam_nivel = nivel.cam_rolagem()
 cam_jogador = jogador.cam_jogador()
 
@@ -42,9 +44,9 @@ while executando:
     if not pause:
         tela.fill(TELA_FUNDO) # inicia a tela
         nivel.plataformas_nivel() # desenha as plataformas
-        nivel.objetos_nivel()
-        rolagem[0] += (jogador.jogador_rect.x - rolagem[0] - 600) / 5
-        rolagem[1] += (jogador.jogador_rect.y - rolagem[1] - 100) / 5
+        coletaveis.objetos_nivel()
+        rolagem[0] += (jogador.jogador_rect.x - rolagem[0] - 640) / 10
+        rolagem[1] += (jogador.jogador_rect.y - rolagem[1] - 390) / 10
         jogador.desenhar_jogador()
         jogador.atualizar_jogador()
 

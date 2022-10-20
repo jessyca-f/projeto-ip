@@ -1,24 +1,22 @@
 import pygame
 
 class Jogador():
-    def __init__(self, nivel, rolagem):
+    def __init__(self, nivel, coletavel, rolagem):
         self.jogador_sprite = pygame.image.load('assets/personagens/jogador.png')
         self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (80, 80))
         self.jogador_rect = self.jogador_sprite.get_rect()
-        self.direcao = pygame.math.Vector2()
+        self.direcao = pygame.math.Vector2(0,0)
         self.velocidade = 10
-        self.gravidade = 0.7
+        self.gravidade = 0.9
         self.rolagem = rolagem
         self.posicoes_validas = nivel.posicoes_validas
-        self.coletaveis_azuis = nivel.coletaveis_azuis
-        self.coletaveis_verdes = nivel.coletaveis_verdes
-        self.coletaveis_rosas = nivel.coletaveis_rosas
+        self.coletavel = coletavel
         self.no_ar = True
 
 
     def entrada_movimento(self):
         tela = pygame.display.get_surface() # permite se referir a tela sem tomar nenhum parâmetro
-        velocidade_pulo = 16
+        velocidade_pulo = 25
         self.pulando = False
 
 
@@ -68,41 +66,37 @@ class Jogador():
                     self.direcao.y = 0
     
     def colisoes_coletaveis(self):
-        coletavel_azul = pygame.image.load('assets/coletaveis/azul.png')
-        coletavel_verde = pygame.image.load('assets/coletaveis/verde.png')
-        coletavel_rosa = pygame.image.load('assets/coletaveis/rosa.png')
-
-        novo_coletavel_azul = pygame.transform.scale(coletavel_azul, (80, 80))
-        novo_coletavel_verde = pygame.transform.scale(coletavel_verde, (80, 80))
-        novo_coletavel_rosa =  pygame.transform.scale(coletavel_rosa, (80, 80))
-
         tela = pygame.display.get_surface()
 
-        if self.coletaveis_azuis == []:
-            tela.blit(novo_coletavel_azul, (1120,0))
-        
-        if self.coletaveis_verdes == []:
-            tela.blit(novo_coletavel_verde, (1040,0))
-        
-        if self.coletaveis_rosas == []:
-            tela.blit(novo_coletavel_rosa, (960,0))
+        self.coletaveis_azuis = self.coletavel.coletaveis_azuis
+        self.coletaveis_verdes = self.coletavel.coletaveis_verdes
+        self.coletaveis_rosas = self.coletavel.coletaveis_rosas
+
+        self.coletavel_azul = self.coletavel.coletavel_azul
+        self.coletavel_verde = self.coletavel.coletavel_verde
+        self.coletavel_rosa = self.coletavel.coletavel_rosa
 
         for sprite in self.coletaveis_azuis:
             objeto = sprite[1]
             if objeto.colliderect(self.jogador_rect):
-                self.coletaveis_azuis = []
+                self.coletaveis_azuis.remove(sprite)
+        if self.coletaveis_azuis == []:
+            tela.blit(self.coletavel_azul, (1120,0))
 
         
         for sprite in self.coletaveis_verdes:
             objeto = sprite[1]
             if objeto.colliderect(self.jogador_rect):
-                self.coletaveis_verdes = []
-
+                self.coletaveis_verdes.remove(sprite)
+        if self.coletaveis_verdes == []:
+            tela.blit(self.coletavel_verde, (1040, 0))
         
         for sprite in self.coletaveis_rosas:
             objeto = sprite[1]
             if objeto.colliderect(self.jogador_rect):
-                self.coletaveis_rosas = []
+                self.coletaveis_rosas.remove(sprite)
+        if self.coletaveis_rosas == []:
+            tela.blit(self.coletavel_rosa, (960, 0))
 
     def desenhar_jogador(self):
         tela = pygame.display.get_surface()
@@ -112,7 +106,6 @@ class Jogador():
         self.cam_jogador()
         self.entrada_movimento()
         self.jogador_rect.x += self.direcao.x * self.velocidade
-        self.jogador_rect.y += self.direcao.y
         self.colisoes_horizontais()
         self.add_gravidade()
         self.colisoes_verticais()
