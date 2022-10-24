@@ -15,40 +15,49 @@ pygame.display.set_caption('Projeto IP')
 
 clock = pygame.time.Clock() # responsável pela quantidade de frames por segundo
 
-rolagem = [0, 0]
-
-nivel = Nivel(rolagem)
-coletaveis = Coletavel(nivel)
-jogador = Jogador(nivel, coletaveis, rolagem)
-cam_nivel = nivel.cam_rolagem()
-cam_jogador = jogador.cam_jogador()
-
-
 # loop do jogo
-executando = True
-pause = False
-while executando:
-    for entrada in pygame.event.get():
-        if entrada.type == pygame.QUIT:
-            executando = False
-            pygame.quit()
-            exit()
+def main():
+    rolagem = [0, 0]
 
-        if entrada.type == pygame.KEYDOWN:
-            if entrada.key == pygame.K_ESCAPE:
-                if pause == True:
-                    pause = False
-                else:
-                    pause = True
+    nivel = Nivel(rolagem)
+    coletaveis = Coletavel(nivel)
+    jogador = Jogador(nivel, coletaveis, rolagem)
+    cam_nivel = nivel.cam_rolagem()
+    cam_jogador = jogador.cam_jogador()
 
-    if not pause:
-        tela.fill(TELA_FUNDO) # inicia a tela
-        nivel.plataformas_nivel() # desenha as plataformas
-        coletaveis.objetos_nivel()
-        rolagem[0] += (jogador.jogador_rect.x - rolagem[0] - 640) / 10
-        rolagem[1] += (jogador.jogador_rect.y - rolagem[1] - 390) / 10
-        jogador.desenhar_jogador()
-        jogador.atualizar_jogador()
+    executando = True
+    pause = False
+    game_over = False
+    while executando:
+        for entrada in pygame.event.get():
+            if entrada.type == pygame.QUIT:
+                executando = False
+                pygame.quit()
+                exit()
 
-    pygame.display.update()
-    clock.tick(60)
+            if entrada.type == pygame.KEYDOWN:
+                if entrada.key == pygame.K_ESCAPE:
+                    if pause == True:
+                        pause = False
+                    else:
+                        pause = True
+
+        if not pause and not game_over:
+            tela.fill(TELA_FUNDO) # inicia a tela
+            nivel.plataformas_nivel() # desenha as plataformas
+            coletaveis.objetos_nivel()
+            rolagem[0] += (jogador.jogador_rect.x - rolagem[0] - 640) / 10
+            rolagem[1] += (jogador.jogador_rect.y - rolagem[1] - 390) / 10
+            jogador.desenhar_jogador()
+            jogador.atualizar_jogador()
+
+            if jogador.jogador_rect.top > TELA_ALTURA + 640:
+                game_over = True
+        elif game_over:
+            if pygame.key.get_pressed()[pygame.K_SPACE]:
+                main()
+
+        pygame.display.update()
+        clock.tick(60)
+
+main()
