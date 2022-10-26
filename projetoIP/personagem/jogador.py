@@ -2,8 +2,8 @@ import pygame
 
 class Jogador():
     def __init__(self, nivel, coletavel, rolagem):
-        self.jogador_sprite = pygame.image.load('assets/personagens/jogador.png')
-        self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (100, 74))
+        self.jogador_sprite = pygame.image.load('assets/personagens/andar1.png')
+        self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (48, 60))
         self.jogador_rect = self.jogador_sprite.get_rect()
         self.direcao = pygame.math.Vector2(0,0)
         self.velocidade = 10
@@ -16,19 +16,34 @@ class Jogador():
         self.verdes_coletados = 0
         self.rosas_coletados = 0
 
+        self.esquerda = False
+        self.direita = False
+        self.contagem = 0
+
 
     def entrada_movimento(self):
         tela = pygame.display.get_surface() # permite se referir a tela sem tomar nenhum parâmetro
         velocidade_pulo = 25
+        caminho = 'assets/personagens/'
+        andar = [pygame.image.load(caminho + 'andar1.png'), pygame.image.load(caminho + 'andar2.png'),
+                 pygame.image.load(caminho + 'andar3.png'),
+                 pygame.image.load(caminho + 'andar4.png'), pygame.image.load(caminho + 'andar5.png'),
+                 pygame.image.load(caminho + 'andar6.png')]
         self.pulando = False
 
 
         if pygame.key.get_pressed()[pygame.K_RIGHT]:
             self.direcao.x = 1 # adiciona movimento a direcao +x
+            self.esquerda = False
+            self.direita = True
         elif pygame.key.get_pressed()[pygame.K_LEFT]:
             self.direcao.x = -1 # adiciona movimento a direcao -x
+            self.direita = False
+            self.esquerda = True
         else:
             self.direcao.x = 0
+            self.esquerda = False
+            self.direita = False
 
         if pygame.key.get_pressed()[pygame.K_SPACE] and not self.no_ar:
             self.pulando = True
@@ -37,6 +52,23 @@ class Jogador():
             self.direcao.y = -velocidade_pulo # adiciona movimento para cima
             self.no_ar = True
             self.pulando = False
+
+        if self.contagem + 1 >= 18:
+            self.contagem = 0
+
+        if self.direita:
+            self.jogador_sprite = andar[self.contagem // 3]
+            self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (48, 60))
+            self.contagem += 1
+        elif self.esquerda:
+            self.jogador_sprite = andar[self.contagem // 3]
+            self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (48, 60))
+            self.jogador_sprite = pygame.transform.flip(self.jogador_sprite, True, False)
+            self.contagem += 1
+        else:
+            self.jogador_sprite = pygame.image.load('assets/personagens/andar1.png')
+            self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (48, 60))
+            self.contagem = 0
 
     def add_gravidade(self):
         self.direcao.y += self.gravidade  # equilibra a velocidade do pulo

@@ -4,14 +4,15 @@ from interface.nivel.layout import Coletavel
 from personagem.jogador import Jogador
 
 # constantes
-TELA_FUNDO = pygame.image.load('assets/tela fundo/cenario.d.png')  #adicionando a tela de fundo
 TELA_LARGURA = 1200
 TELA_ALTURA = 700
 
-pygame.init()
 
 tela = pygame.display.set_mode((TELA_LARGURA, TELA_ALTURA))
-pygame.display.set_caption('Projeto IP')
+TELA_FUNDO = pygame.image.load('assets/tela_fundo/cenario.png').convert() #adicionando a tela de fundo
+
+pygame.init()
+pygame.display.set_caption('Fobia')
 
 clock = pygame.time.Clock()  # responsável pela quantidade de frames por segundo
 
