@@ -3,7 +3,7 @@ import pygame
 class Jogador():
     def __init__(self, nivel, coletavel, rolagem):
         self.jogador_sprite = pygame.image.load('assets/personagens/jogador.png')
-        self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (80, 80))
+        self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (100, 74))
         self.jogador_rect = self.jogador_sprite.get_rect()
         self.direcao = pygame.math.Vector2(0,0)
         self.velocidade = 10
