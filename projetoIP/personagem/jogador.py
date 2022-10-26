@@ -3,7 +3,7 @@ import pygame
 class Jogador():
     def __init__(self, nivel, coletavel, rolagem):
         self.jogador_sprite = pygame.image.load('assets/personagens/jogador.png')
-        self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (80, 80))
+        self.jogador_sprite = pygame.transform.scale(self.jogador_sprite, (100, 74))
         self.jogador_rect = self.jogador_sprite.get_rect()
         self.direcao = pygame.math.Vector2(0,0)
         self.velocidade = 10
@@ -12,6 +12,9 @@ class Jogador():
         self.posicoes_validas = nivel.posicoes_validas
         self.coletavel = coletavel
         self.no_ar = True
+        self.azuis_coletados = 0
+        self.verdes_coletados = 0
+        self.rosas_coletados = 0
 
 
     def entrada_movimento(self):
@@ -66,8 +69,6 @@ class Jogador():
                     self.direcao.y = 0
     
     def colisoes_coletaveis(self):
-        tela = pygame.display.get_surface()
-
         self.coletaveis_azuis = self.coletavel.coletaveis_azuis
         self.coletaveis_verdes = self.coletavel.coletaveis_verdes
         self.coletaveis_rosas = self.coletavel.coletaveis_rosas
@@ -76,27 +77,48 @@ class Jogador():
         self.coletavel_verde = self.coletavel.coletavel_verde
         self.coletavel_rosa = self.coletavel.coletavel_rosa
 
+        tela = pygame.display.get_surface()
+        
+        pygame.font.init()
+
+        fonte = pygame.font.get_default_font()
+        fonte_geral = pygame.font.SysFont(fonte, 40)
+
+        texto_azuis = fonte_geral.render(f'{self.azuis_coletados}', 1, (255, 255, 255))
+        texto_verdes = fonte_geral.render(f'{self.verdes_coletados}', 1, (255, 255, 255))
+        texto_rosas = fonte_geral.render(f'{self.rosas_coletados}', 1, (255, 255, 255))
+
+        tela.blit(texto_azuis, (1180,5))
+        tela.blit(texto_verdes, (1100,5))
+        tela.blit(texto_rosas, (1020,5))
+
+        contador_azul = pygame.transform.scale(self.coletavel_azul, (33, 33))
+        contador_verde = pygame.transform.scale(self.coletavel_verde, (33, 33))
+        contador_rosa = pygame.transform.scale(self.coletavel_rosa, (33, 33))
+
+        tela.blit(contador_azul, (1140,0))
+        tela.blit(contador_verde, (1060,0))
+        tela.blit(contador_rosa, (980,0))
+
         for sprite in self.coletaveis_azuis:
             objeto = sprite[1]
             if objeto.colliderect(self.jogador_rect):
+                self.azuis_coletados += 1
                 self.coletaveis_azuis.remove(sprite)
-        if self.coletaveis_azuis == []:
-            tela.blit(self.coletavel_azul, (1120,0))
 
         
         for sprite in self.coletaveis_verdes:
             objeto = sprite[1]
             if objeto.colliderect(self.jogador_rect):
+                self.verdes_coletados += 1
                 self.coletaveis_verdes.remove(sprite)
-        if self.coletaveis_verdes == []:
-            tela.blit(self.coletavel_verde, (1040, 0))
+
         
         for sprite in self.coletaveis_rosas:
             objeto = sprite[1]
             if objeto.colliderect(self.jogador_rect):
+                self.rosas_coletados += 1
                 self.coletaveis_rosas.remove(sprite)
-        if self.coletaveis_rosas == []:
-            tela.blit(self.coletavel_rosa, (960, 0))
 
     def desenhar_jogador(self):
         tela = pygame.display.get_surface()
