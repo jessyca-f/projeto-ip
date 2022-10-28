@@ -14,6 +14,11 @@ TELA_FUNDO = pygame.image.load('assets/tela_fundo/cenario.png').convert() #adici
 pygame.init()
 pygame.display.set_caption('Fobia')
 
+pygame.mixer.music.set_volume(0.4) # Controle de volume da musica ENTRE 0 E 1
+musica_de_fundo = pygame.mixer.music.load('assets/sons/musica_fundo.mp3') # Variavel para criar a música do jogo
+pygame.mixer.music.play(-1) # Função para que a música toque repetidamente
+
+
 clock = pygame.time.Clock()  # responsável pela quantidade de frames por segundo
 
 # loop do jogo
@@ -52,7 +57,7 @@ def main():
             jogador.desenhar_jogador()
             jogador.atualizar_jogador()
 
-            if jogador.jogador_rect.top > TELA_ALTURA + 640:
+            if jogador.jogador_rect.top > (TELA_ALTURA + rolagem[1] + 390):
                 game_over = True
         elif game_over:
             if pygame.key.get_pressed()[pygame.K_SPACE]:
