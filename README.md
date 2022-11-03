@@ -1,7 +1,9 @@
 
 # Projeto IP: Fobia
 
-Aqui encontra-se o sistema interativo denominado Fobia, um jogo desenvolvido para a disciplina de introdução a computação da UFPE. 
+Aqui encontra-se o sistema interativo denominado Fobia, um jogo 2d desenvolvido como projeto final da disciplina de introdução à programação da Universidade Federal de Pernambuco. 
+
+
 ![Screenshot 1](https://i.imgur.com/b0JV2xC.png)
 ![Screenshot 2](https://i.imgur.com/8juhOBP.png)
 
@@ -32,13 +34,13 @@ implementação do áudio no código
 
 ![Diagrama de hierarquia de pastas](https://i.imgur.com/JDNvex9.png)
 
-**main.py** - contém a estrutura geral do sistema interativo, como a função main, responsável por controlar o loop principal do jogo e instanciar as suas diferentes classes.
+**main.py** - contém a estrutura geral do sistema interativo, como a função main, responsável por controlar o loop principal do jogo e instanciar as suas diferentes classes. Também armazena constantes como largura e altura da tela.
 
 **assets** - contém todas as imagens utilizadas no código, separadas em diferentes pastas.
 
 **interface** - abriga a pasta *nivel*, que, por sua vez, contém o arquivo *layout.py*. *layout.py* abriga a matriz de coordenadas do jogo, responsável pelas coordenadas das plataformas e dos coletáveis desenhados na tela. Armazena também duas classes: *Nivel* e *Coletaveis*. 
 \
-A *classe Nivel* foi utilizada para organizar as funções que cuidam da câmera do jogo e as funções responsáveis pelos desenhos das plataformas na tela, enquanto a *classe Coletaveis* é responsável pelos desenhos do três diferentes tipos de coletáveis.
+A *classe Nivel* foi utilizada para organizar as funções que cuidam da câmera do jogo e as funções responsáveis pelos desenhos das plataformas na tela, enquanto a *classe Coletaveis* é responsável pelos desenhos dos três diferentes tipos de coletáveis.
 
 **personagem** - o arquivo *jogador.py* contém a *classe Jogador*, que possui funções
 que controlam o movimento do jogador, sua câmera, colisões (com as plataformas e também com os coletáveis
