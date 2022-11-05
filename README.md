@@ -47,6 +47,10 @@ que controlam o movimento do jogador, sua câmera, colisões (com as plataformas
 ), bem como a função de update e draw.
 ## Bibliotecas
 ## Conceitos utilizados
+  
+  Foram utilizados desde os conceitos ensinados no início da disciplina, como a noção de listas, até noções iniciais de POO. A ideia de matrizes, por exemplo, foi essencial na construção do jogo, já que os sprites são adicionados à tela através de uma matriz que representa suas coordenadas. Diferentes tipos de sprites (como plataformas ou um coletável azul) são desenhados na tela dependendo de qual valor se encontra na matriz naquela posição.
+Outra noção de extrema importância para o projeto foi a introdução a classes e objetos. Além do fato de que toda a estrutura do código tem como base a divisão por classes e suas funções, poder gerenciar cada objeto de maneira independente tornou o processo de escrita do código mais fácil e melhorou sua legibilidade de forma significante.
+  
 ## Desafios e erros
   
   Os problemas iniciais surgiram com o a dificuldade de entendimento, tanto da programação orientada a objetos, quanto ao funcionamento e uso do pygame, e também em relação ao uso do git e github problemas que foram resolvidos com um profundo estudo em diversos conceitos que compoem o assunto. Outro problema encontrado em relação ao aúdio, dificuldade na sua implementação e também faze-ló rodar no jogo devido ao seu formato, onde foi preciso encontrar soluções para achar o formato certo o que foi feito com sucesso.
