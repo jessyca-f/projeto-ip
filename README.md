@@ -61,3 +61,8 @@ Foi a primeira vez de grande parte da equipe desenvolvendo algo em conjunto e to
 Para execução do código, é necessário que você possua Python e pygame instalados.
 - Abra a pasta *projetoIP* no seu editor de escolha.
 - Execute o arquivo main.py.
+- Execute o arquivo main.py.
+
+
+![Screenshot 1](https://i.imgur.com/b0JV2xC.png)
+![Screenshot 2](https://i.imgur.com/8juhOBP.png)
