@@ -48,4 +48,9 @@ que controlam o movimento do jogador, sua câmera, colisões (com as plataformas
 ## Bibliotecas
 ## Conceitos utilizados
 ## Desafios e erros
+  
+  Os problemas iniciais surgiram com o a dificuldade de entendimento, tanto da programação orientada a objetos, quanto ao funcionamento e uso do pygame, e também em relação ao uso do git e github, problemas que foram resolvidos com um profundo estudo em diversos conceitos que compoem o assunto.
+Quanto a desafios, podem ser citados a dificuldade de escrever um código em conjunto pela primeira vez e o processo de adaptação ao estilo de escrita de um grande grupo de diferentes pessoas. Uma melhor comunicação, tanto dentro do código, em forma de comentários, quanto fora dele, permitiu que esse desafio fosse superado.
+Um dos maiores erros cometidos ao desenvolver esse projeto foi subestimar a importância da organização do código. Houve um momento em que diversas funções, referentes a diferentes classes, foram condensadas em uma só, algo que dificultou a identificação de erros (e suas eventuais correções) e que poderia ter sido evitado se tivessemos focado em manter o código limpo desde o início.
+
 ## Instruções
