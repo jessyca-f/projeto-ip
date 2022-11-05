@@ -46,6 +46,9 @@ A *classe Nivel* foi utilizada para organizar as funções que cuidam da câmera
 que controlam o movimento do jogador, sua câmera, colisões (com as plataformas e também com os coletáveis
 ), bem como a função de update e draw.
 ## Bibliotecas
+
+Escolheu-se utilizar a biblioteca pygame na criação do jogo. Inicialmente, foi considerado também o uso da biblioteca pyglet, utilizada, assim como pygame, no desenvolvimento de jogos. Os fatores que levaram a equipe à escolha do pygame foi a sua maior quantidade de usuários – o que tornou erros mais fáceis de serem corrigidos, já que outras pessoas já haviam passado pela mesma experiência – e documentação mais completa e voltada para iniciantes.
+
 ## Conceitos utilizados
   
   Foram utilizados desde os conceitos ensinados no início da disciplina, como a noção de listas,estruturas de repetição, até noções iniciais de POO. A ideia de matrizes, por exemplo, foi essencial na construção do jogo, já que os sprites são adicionados à tela através de uma matriz que representa suas coordenadas. Diferentes tipos de sprites (como plataformas ou um coletável azul) são desenhados na tela dependendo de qual valor se encontra na matriz naquela posição.
@@ -58,3 +61,7 @@ Quanto a desafios, podem ser citados a dificuldade de escrever um código em con
 Foi a primeira vez de grande parte da equipe desenvolvendo algo em conjunto e todas as partes que estão envolvidas nas etapas de escrever um código com outras pessoas serviram de aprendizado. Em especial, destacam-se o novo entendimento adquirido quanto a necessidade de separar um código em diferentes pastas e de comentar um código, ambos essenciais no processo de desenvolvimento desse projeto. Também foram adquiridos conhecimentos em relação a programação orientada a objetos, e também como alocar projetos no github.
 
 ## Instruções
+
+Para execução do código, é necessário que você possua Python e pygame instalados.
+- Abra a pasta *projetoIP* no seu editor de escolha.
+- Execute o arquivo main.py.
