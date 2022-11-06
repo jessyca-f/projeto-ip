@@ -13,7 +13,7 @@ implementação do áudio no código
 
 [João Lucas Souza (jlss)](https://github.com/jlucassouza) - funcionamento do inimigo e condição de 'game-over'
 
-[Kaylanne Eduarda (kess](https://github.com/Kaylanneedu) - implementação de sprites e suas animações no código
+[Kaylanne Eduarda (kess)](https://github.com/Kaylanneedu) - implementação de sprites e suas animações no código
 
 [Lucas Francisco (lfasm)](https://github.com/lukasales) - colisões horizontais e verticais
 
