@@ -1,5 +1,4 @@
 import pygame
-from personagem.vilão import Vilao
 
 # constantes
 TAMANHO_TILE = (80, 80)
@@ -62,7 +61,6 @@ class Nivel():
                 
                 if valor == 5:
                     fear = Vilao()
-                    viloes.add(fear)
                     fear_rect = fear.get_rect()
                     fear_rect.x = valor_coord * TAMANHO_TILE[0]
                     fear_rect.y = linha_coord * TAMANHO_TILE[1]
@@ -137,3 +135,20 @@ class Coletavel():
         for posicao in self.coletaveis_rosas:
             posicao_coletavel = self.nivel.cam_rolagem(posicao[1])
             tela.blit(posicao[0], posicao_coletavel)
+
+class Vilao(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        pygame.sprite.Sprite.__init__(self)
+        self.imagem = pygame.image.load('assets/personagens/idle.png')
+        self.vilao_rect = self.image.get.rect()
+        self.vilao_rect.x = x
+        self.vilao_rect.y = y
+        self.movimentos = 1
+        self.mov_contador= 0
+    
+    def update(self):
+        self.vilao_rect.x += self.movimentos
+        self.mov_contador += 1        
+        if abs(self.mov_contador) >= 50:
+            self.movimentos *= -1
+            self.mov_contador = -1

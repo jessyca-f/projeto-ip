@@ -1,4 +1,6 @@
 import pygame
+from interface.nivel.layout import Vilao
+from projetoIP.main import 
 
 class Jogador():
     def __init__(self, nivel, coletavel, rolagem):
@@ -151,7 +153,11 @@ class Jogador():
             if objeto.colliderect(self.jogador_rect):
                 self.rosas_coletados += 1
                 self.coletaveis_rosas.remove(sprite)
-
+                
+    def colisoes_inimigos(self):
+        if pygame.sprite.spritecollide(self, Vilao, False):
+            game_over = True
+        
     def desenhar_jogador(self):
         tela = pygame.display.get_surface()
         tela.blit(self.jogador_sprite, self.jogador_pos)
