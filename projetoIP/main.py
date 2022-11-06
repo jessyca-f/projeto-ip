@@ -1,6 +1,7 @@
 import pygame
 from interface.nivel.layout import Nivel
 from interface.nivel.layout import Coletavel
+from interface.nivel.layout import Vilao
 from personagem.jogador import Jogador
 
 # constantes
@@ -27,6 +28,7 @@ def main():
     nivel = Nivel(rolagem)
     coletaveis = Coletavel(nivel)
     jogador = Jogador(nivel, coletaveis, rolagem)
+    viloes = Vilao()
     cam_nivel = nivel.cam_rolagem()
     cam_jogador = jogador.cam_jogador()
 
