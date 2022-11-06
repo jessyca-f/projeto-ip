@@ -11,7 +11,7 @@ implementação do áudio no código
 
 [Jéssyca Ferreira (jfs7)](https://github.com/jessyca-ferreira) - elaboração da matriz de coordenadas e movimentação do personagem principal
 
-[João Lucas Souza (jlss)](https://github.com/jlucassouza) - funcionamento do inimigo e condição de 'game-over'
+[João Lucas Souza (jlss)](https://github.com/jlucassouza) -  organização do código
 
 [Kaylanne Eduarda (kess)](https://github.com/Kaylanneedu) - implementação de sprites e suas animações no código
 
@@ -19,7 +19,7 @@ implementação do áudio no código
 
 [Marcos Antônio (mall)](https://github.com/MarcosLaureano) - criação dos coletáveis e display da contagem de pontuação
 
-[Thays Cipriano (tvcc)](https://github.com/thaysz27) -  funcionamento do inimigo e condição de 'game-over'
+[Thays Cipriano (tvcc)](https://github.com/thaysz27) -  implementação das telas de 'vitória' e 'game over'
 
 ## Organização do código
 
