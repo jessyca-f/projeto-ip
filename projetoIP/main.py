@@ -7,7 +7,6 @@ from personagem.jogador import Jogador
 TELA_LARGURA = 1200
 TELA_ALTURA = 700
 
-
 tela = pygame.display.set_mode((TELA_LARGURA, TELA_ALTURA))
 TELA_FUNDO = pygame.image.load('assets/tela_fundo/cenario.png').convert() #adicionando a tela de fundo
 
@@ -33,6 +32,7 @@ def main():
     executando = True
     pause = False
     game_over = False
+    you_won = False
     while executando:
         for entrada in pygame.event.get():
             if entrada.type == pygame.QUIT:
@@ -59,9 +59,32 @@ def main():
 
             if jogador.jogador_rect.top > (TELA_ALTURA + rolagem[1] + 390):
                 game_over = True
+            if jogador.rosas_coletados == 3 and jogador.azuis_coletados == 3 and jogador.verdes_coletados == 3:
+                pygame.init() 
+                display_surface = pygame.display.set_mode((1200,700)) 
+                image = pygame.image.load('assets/tela_fundo_GO/Wins.png')
+                pygame.display.set_caption('Image')
+                display_surface.blit(image, (0, 0))
+
+                if pygame.key.get_pressed()[pygame.K_SPACE] and you_won:
+                    main()
+                if pygame.key.get_pressed()[pygame.K_x]:
+                    executando = False
+                
+
+                you_won = True
+
         elif game_over:
+            pygame.init() 
+            display_surface = pygame.display.set_mode((1200,700)) 
+            image = pygame.image.load('assets/tela_fundo_GO/Game_OveR.png')
+            pygame.display.set_caption('Image')
+            display_surface.blit(image, (0, 0))
+
             if pygame.key.get_pressed()[pygame.K_SPACE]:
                 main()
+            if pygame.key.get_pressed()[pygame.K_x]:
+                executando = False
 
         pygame.display.update()
         clock.tick(60)
