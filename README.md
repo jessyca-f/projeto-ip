@@ -67,5 +67,5 @@ Para execução do código, é necessário que você possua Python e pygame inst
 O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo.
 
 
-![Screenshot 1](https://i.imgur.com/b0JV2xC.png)
+![Screenshot 1](https://i.imgur.com/VC2Pu2u.png)
 ![Screenshot 2](https://i.imgur.com/8juhOBP.png)
