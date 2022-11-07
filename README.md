@@ -4,6 +4,16 @@
 Aqui encontra-se o sistema interativo denominado Fobia, um jogo 2D no estilo plataforma, desenvolvido como projeto final da disciplina de introdução à programação da Universidade Federal de Pernambuco. 
 
 
+## Instruções
+
+Para execução do código, é necessário que você possua Python e pygame instalados.
+- Faça o download do branch main deste repositório e extraia o arquivo .zip.
+- Abra a pasta projetoIP no seu editor de escolha.
+- Execute o arquivo main.py.
+
+O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo.
+
+
 ## Membros da equipe e suas funções
 
 [César de Moura (chcm)](https://github.com/eucesarmoura) - 
@@ -56,16 +66,6 @@ Quanto a desafios, podem ser citados a dificuldade de escrever um código em con
 Um dos maiores erros cometidos ao desenvolver esse projeto foi subestimar a importância da organização do código. Houve um momento em que diversas funções, referentes a diferentes classes, foram condensadas em uma só, algo que dificultou a identificação de erros (e suas eventuais correções) e que poderia ter sido evitado se tivessemos focado em manter o código limpo desde o início.
 
 Foi a primeira vez de grande parte da equipe desenvolvendo algo em conjunto e, assim, todas as partes que estão envolvidas nas etapas de escrever um código com outras pessoas serviram de aprendizado. Em especial, destacam-se o novo entendimento adquirido quanto a necessidade de separar um código em diferentes pastas e de comentar um código, ambos essenciais no processo de desenvolvimento desse projeto. Também foram adquiridos conhecimentos iniciais em relação a programação orientada a objetos e github.
-
-## Instruções
-
-Para execução do código, é necessário que você possua Python e pygame instalados.
-- Faça o download do branch main deste repositório e extraia o arquivo .zip.
-- Abra a pasta projetoIP no seu editor de escolha.
-- Execute o arquivo main.py.
-
-O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo.
-
 
 ![Screenshot 1](https://i.imgur.com/VC2Pu2u.png)
 ![Screenshot 2](https://i.imgur.com/8juhOBP.png)
