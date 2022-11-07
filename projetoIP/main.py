@@ -14,7 +14,7 @@ pygame.init()
 pygame.display.set_caption('Fobia')
 
 pygame.mixer.music.set_volume(0.4) # Controle de volume da musica ENTRE 0 E 1
-musica_de_fundo = pygame.mixer.music.load('assets/sons/musica_fundo.mp3') # Variavel para criar a música do jogo
+musica_de_fundo = pygame.mixer.music.load('assets/sons/musica_fundo.wav') # Variavel para criar a música do jogo
 pygame.mixer.music.play(-1) # Função para que a música toque repetidamente
 
 
@@ -59,12 +59,10 @@ def main():
 
             if jogador.jogador_rect.top > (TELA_ALTURA + rolagem[1] + 390):
                 game_over = True
+
             if jogador.rosas_coletados == 3 and jogador.azuis_coletados == 3 and jogador.verdes_coletados == 3:
-                pygame.init() 
-                display_surface = pygame.display.set_mode((1200,700)) 
-                image = pygame.image.load('assets/tela_fundo_GO/Wins.png')
-                pygame.display.set_caption('Image')
-                display_surface.blit(image, (0, 0))
+                win = pygame.image.load('assets/tela_fundo/win.png').convert()
+                tela.blit(win, (0, 0))
 
                 if pygame.key.get_pressed()[pygame.K_SPACE] and you_won:
                     main()
@@ -75,11 +73,8 @@ def main():
                 you_won = True
 
         elif game_over:
-            pygame.init() 
-            display_surface = pygame.display.set_mode((1200,700)) 
-            image = pygame.image.load('assets/tela_fundo_GO/Game_OveR.png')
-            pygame.display.set_caption('Image')
-            display_surface.blit(image, (0, 0))
+            lose = pygame.image.load('assets/tela_fundo/game_over.png').convert()
+            tela.blit(lose, (0, 0))
 
             if pygame.key.get_pressed()[pygame.K_SPACE]:
                 main()
