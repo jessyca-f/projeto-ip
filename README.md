@@ -41,7 +41,7 @@ implementação do áudio no código
 
 *interface* - abriga a pasta nivel, que, por sua vez, contém o arquivo layout.py. layout.py abriga a matriz de coordenadas do jogo, responsável pelas coordenadas das plataformas e dos coletáveis desenhados na tela. Armazena também duas classes: Nivel e Coletaveis. 
 
-A classe Nivel foi utilizada para organizar as funções que cuidam da câmera do jogo e as funções responsáveis pelos desenhos das plataformas na tela, enquanto a classe Coletaveis é responsável pelos desenhos dos três diferentes tipos de coletáveis.
+A classe Nivel foi utilizada para organizar as funções que cuidam da câmera do jogo e as funções responsáveis pela adição das plataformas na tela, enquanto a classe Coletaveis é responsável pela adição dos três diferentes tipos de coletáveis.
 
 *personagem* - o arquivo jogador.py contém a classe Jogador, que possui funções responsáveis por controlar o movimento do jogador, sua câmera, colisões (com as plataformas e também com os coletáveis), bem como a função de update e draw.
 
