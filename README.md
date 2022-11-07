@@ -53,7 +53,7 @@ Escolheu-se utilizar a biblioteca pygame na criação do jogo. Inicialmente, foi
   
 Foram utilizados desde os conceitos ensinados no início da disciplina, como a noção de listas e estruturas de repetição, até as partes mais avançadas, como noções iniciais de POO.
 
-A ideia de matrizes, por exemplo, foi essencial na construção do jogo, já que os sprites são adicionados à tela através de uma matriz que representa suas coordenadas. Diferentes tipos de sprites (como plataformas ou um coletável azul) são desenhados na tela dependendo de qual valor se encontra na matriz naquela posição.
+A ideia de matrizes, por exemplo, foi essencial na construção do jogo, já que os sprites são adicionados à tela através de uma matriz que representa suas coordenadas. Diferentes tipos de sprites (como plataformas ou um coletável azul) são desenhados na tela dependendo de qual valor se encontra na matriz naquela posição. Esses valores são lidos através de uma estrutura de repetição, o *for*.
 
 Outra noção de extrema importância para o projeto foi a introdução a classes e objetos. Além do fato de que toda a estrutura do código tem como base a divisão por classes e suas funções, poder gerenciar cada objeto de maneira independente tornou o processo de escrita do código mais fácil e melhorou sua legibilidade de forma significante.
   
