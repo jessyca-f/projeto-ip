@@ -1,7 +1,7 @@
 
 # Projeto IP: Fobia
 
-Aqui encontra-se o sistema interativo denominado Fobia, um jogo 2D no estilo plataforma, desenvolvido como projeto final da disciplina de introdução à programação da Universidade Federal de Pernambuco. 
+Aqui encontra-se o sistema interativo denominado Fobia, um jogo 2D no estilo plataforma, desenvolvido como projeto final da disciplina de introdução à programação da Universidade Federal de Pernambuco. O nome se deve ao conceito elaborado para o jogo: o jogador estaria sempre se movendo a fim de fugir de seu pior medo, ainda que essa fuga possua alguns perigos maiores que o medo imaginário, como as plataformas flutuantes que podem leva à sua queda.
 
 
 ## Instruções
