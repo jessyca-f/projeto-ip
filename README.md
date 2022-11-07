@@ -39,7 +39,7 @@ implementação do áudio no código
 
 *assets* - contém todas as imagens utilizadas no código, separadas em diferentes pastas.
 
-*interface* - abriga a pasta nivel, que, por sua vez, contém o arquivo layout.py. layout.py abriga a matriz de coordenadas do jogo, responsável pelas coordenadas das plataformas e dos coletáveis desenhados na tela. Armazena também duas classes: Nivel e Coletaveis. 
+*interface* - abriga a pasta nivel, que, por sua vez, contém o arquivo layout.py abriga a matriz de coordenadas do jogo, responsável pelas coordenadas das plataformas e dos coletáveis desenhados na tela. Armazena também duas classes: Nivel e Coletaveis. 
 
 A classe Nivel foi utilizada para organizar as funções que cuidam da câmera do jogo e as funções responsáveis pela adição das plataformas na tela, enquanto a classe Coletaveis é responsável pela adição dos três diferentes tipos de coletáveis.
 
