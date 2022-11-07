@@ -59,7 +59,7 @@ Outra noção de extrema importância para o projeto foi a introdução a classe
   
 ## Desafios, erros e aprendizados
   
-Os problemas iniciais surgiram com o a dificuldade de compreensão, tanto de programação orientada a objetos, quanto ao funcionamento e uso do pygame, e também em relação ao uso do git e github. Esses problemas foram resolvidos com o estudo e experiência que se adquiriu ao longo do processo de desenvolvimento do jogo.
+Os problemas iniciais surgiram com a dificuldade de compreensão, tanto de programação orientada a objetos, quanto ao funcionamento e uso do pygame, e também em relação ao uso do git e github. Esses problemas foram resolvidos com o estudo e experiência que se adquiriu ao longo do processo de desenvolvimento do jogo.
 
 Quanto a desafios, podem ser citados a dificuldade de escrever um código em conjunto pela primeira vez e o processo de adaptação ao estilo de escrita de um grande grupo de diferentes pessoas. Uma melhor comunicação, tanto dentro do código, em forma de comentários, quanto fora dele, permitiu que esse desafio fosse superado.
 
