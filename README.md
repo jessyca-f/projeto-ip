@@ -63,6 +63,8 @@ Para execução do código, é necessário que você possua Python e pygame inst
 - Abra a pasta projetoIP no seu editor de escolha.
 - Execute o arquivo main.py.
 
+O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo.
+
 
 ![Screenshot 1](https://i.imgur.com/b0JV2xC.png)
 ![Screenshot 2](https://i.imgur.com/8juhOBP.png)
