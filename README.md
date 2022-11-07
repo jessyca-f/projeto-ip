@@ -60,7 +60,7 @@ Foi a primeira vez de grande parte da equipe desenvolvendo algo em conjunto e, a
 ## Instruções
 
 Para execução do código, é necessário que você possua Python e pygame instalados.
-- Faça o download do branch main deste repositório.
+- Faça o download do branch main deste repositório e extraia o arquivo .zip.
 - Abra a pasta projetoIP no seu editor de escolha.
 - Execute o arquivo main.py.
 
